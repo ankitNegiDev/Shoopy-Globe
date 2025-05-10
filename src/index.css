@@ -53,10 +53,6 @@ body {
         /* margin: 0.8rem; */
         box-shadow: none; /* Lighter appearance on small screens */
     }
-
-    .main-content {
-        /* padding: 0.8rem; */
-    }
 }
 
 /* ====== Extra Small Screens (max-width: 480px) ====== */

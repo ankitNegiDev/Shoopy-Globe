@@ -56,7 +56,6 @@ src/
 - ![full website ](./src/assets/full.png)
 - ![cart](./src/assets/cart.png)
 
-
 ## 🚀 Installation
 
 Follow these steps to setup and run the project locally.
