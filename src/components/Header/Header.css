@@ -1,71 +1,104 @@
-/* ====== Header Styles ====== */
+/* Container for the entire header */
 .header-container {
-    background: linear-gradient(135deg, #468201, #f9abac, #b875f8); /* Soft pink gradient */
-    padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
+    /* background: linear-gradient(to right, rgb(243, 140, 181), #74cbe9, #8fa2e7); */
+    background:rgb(70, 165, 254);
+    box-shadow: 10 14px 12px rgba(0, 0, 0, 0.08);
+    padding: 12px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
+/* Flex layout for nav items */
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: bisque; */
+    padding: 0.5rem;
 }
 
+/* Brand/Logo link */
 .brand-link {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease-in-out;
+    /* color: #ffffff; */
+    transition: color 0.3s ease;
 }
 
 .brand-link:hover {
-    color: #053e9a; /* Hover effect with a yellowish color */
+    color: #d4f8bb;
 }
 
+/* Cart link */
 .cart-link {
-    font-size: 18px;
-    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(37, 36, 36, 0.74);
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    backdrop-filter: blur(6px);
 }
 
 .cart-link:hover {
-    color: #ffeb3b; /* Hover effect with a yellowish color */
+    background-color: rgb(57, 140, 248);
+    transform: translateY(-1px) scale(1.1);
+    /* font-size: 1.2rem; */
+    color: white;
+
 }
-
-/* ====== Responsive Styles ====== */
-@media (max-width: 768px) {
-    .header-container {
-        padding: 10px 15px;
-    }
-
-    .brand-link {
-        font-size: 20px;
+/* Existing small screen rules */
+@media (max-width: 600px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .cart-link {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-container {
-        padding: 8px 10px;
+        width: 100%;
+        text-align: center;
     }
 
     .brand-link {
-        font-size: 18px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet screens */
+@media (max-width: 992px) {
+    .nav-container {
+        padding: 0.5rem 1rem;
+    }
+
+    .brand-link {
+        font-size: 1.6rem;
     }
 
     .cart-link {
-        font-size: 14px;
+        font-size: 0.95rem;
+        padding: 6px 12px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .header-container {
+        padding: 10px 16px;
+    }
+
+    .brand-link {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .cart-link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
     }
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import useFetchProducts from '../hooks/useFetchProducts';
 
 import ProductItem from '../ProductItem/ProductItem';
+import './productList.css'
 
 function ProductList() {
     const { products, error } = useFetchProducts();
@@ -16,18 +17,21 @@ function ProductList() {
         return product.title.toLowerCase().includes(search.toLowerCase());
     }
 
+
     return (
-        <div>
+        <div className='product-list-container'>
             <input
+                className='search-input'
                 type="text"
                 placeholder="Search products..."
                 value={search}
                 onChange={handleChange}
             />
 
-            {error && <p>Error: {error}</p>}
+            {error && <h2 className='error-message'>Error: {error}</h2>}
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
+            {/* <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(310px, 1fr))', gap: '3.5rem' }} className='product-grid'> */}
+            <div className='product-grid'>
                 {products.filter(filterProducts).map(function (product) {
                     return <ProductItem key={product.id} product={product} />;
                 })}
@@ -37,3 +41,5 @@ function ProductList() {
 }
 
 export default ProductList;
+
+

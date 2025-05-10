@@ -24,3 +24,6 @@ function useFetchProducts() {
 }
 
 export default useFetchProducts;
+
+
+// creating a custom hook so that whenever we have to deal with product fetching we can call our custom hook...

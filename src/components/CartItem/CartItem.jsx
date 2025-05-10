@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeFromCart, increaseQuantity, decreaseQuantity } from '../../redux/cartSlice';
-
+import './cartItem.css'
 function CartItem(props) {
     const dispatch = useDispatch();
     const item = props.item;
@@ -19,16 +19,16 @@ function CartItem(props) {
     }
 
     return (
-        <div style={{ display: 'flex', gap: '20px', alignItems: 'center', borderBottom: '1px solid #ccc', padding: '10px 0' }}>
-            <img src={item.thumbnail} alt={item.title} style={{ width: '80px', height: '80px', objectFit: 'cover' }} />
-            <div style={{ flexGrow: 1 }}>
-                <h4>{item.title}</h4>
-                <p>Price: ${item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-                <div>
-                    <button onClick={handleDecrease} style={{ marginRight: '5px' }}>-</button>
-                    <button onClick={handleIncrease} style={{ marginRight: '10px' }}>+</button>
-                    <button onClick={handleRemove}>Remove</button>
+        <div className="cart-item">
+            <img src={item.thumbnail} alt={item.title} className="cart-item-image" />
+            <div className="cart-item-details">
+                <h4 className="cart-item-title">{item.title}</h4>
+                <p className="cart-item-price">Price: ${item.price}</p>
+                <p className="cart-item-quantity">Quantity: {item.quantity}</p>
+                <div className="cart-item-controls">
+                    <button onClick={handleDecrease} className="qty-btn">-</button>
+                    <button onClick={handleIncrease} className="qty-btn">+</button>
+                    <button onClick={handleRemove} className="remove-btn">Remove</button>
                 </div>
             </div>
         </div>

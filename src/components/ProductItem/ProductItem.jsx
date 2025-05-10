@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
+import './productItem.css'
 
 function ProductItem(props) {
+    const [imageLoaded, setImageLoaded] = useState(false);
     const dispatch = useDispatch();
     const product = props.product;
 
@@ -15,15 +17,22 @@ function ProductItem(props) {
             thumbnail: product.thumbnail
         }));
     }
-
     return (
-        <div style={{ border: '1px solid #ccc', padding: '10px', borderRadius: '8px' }}>
+        <div className="product-card">
             <Link to={`/product/${product.id}`}>
-                <img src={product.thumbnail} alt={product.title} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-                <h3>{product.title}</h3>
-                <p>Price: ${product.price}</p>
+                <div className="image-wrapper">
+                    {!imageLoaded && <div className="image-skeleton" />}
+                    <img
+                        src={product.thumbnail}
+                        alt={product.title}
+                        className={`product-image ${imageLoaded ? 'visible' : 'hidden'}`}
+                        onLoad={() => setImageLoaded(true)}
+                    />
+                </div>
+                <h3 className="product-title">{product.title}</h3>
+                <p className="product-price">Price: ${product.price}</p>
             </Link>
-            <button onClick={handleAddToCart} style={{ marginTop: '10px', padding: '5px 10px' }}>
+            <button onClick={handleAddToCart} className="add-to-cart-btn">
                 Add to Cart
             </button>
         </div>
@@ -31,3 +40,4 @@ function ProductItem(props) {
 }
 
 export default ProductItem;
+

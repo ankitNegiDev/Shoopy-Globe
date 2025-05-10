@@ -16,12 +16,15 @@ const Cart = lazy(function () {
     return import('./components/Cart/Cart');
 });
 
+import SkeletonLoader from './components/SkeletonLoader/SkeletonLoader';
+import Footer from './components/Footer/Footer';
+
 function App() {
     return (
         <div className="app-container">
             <Header />
             <main className="main-content">
-                <Suspense fallback={<p style={{ padding: '20px' }}>Loading...</p>}>
+                <Suspense fallback={<SkeletonLoader />}>
                     <Routes>
                         <Route path="/" element={<ProductList />} />
                         <Route path="/product/:id" element={<ProductDetail />} />
@@ -30,8 +33,10 @@ function App() {
                     </Routes>
                 </Suspense>
             </main>
+            <Footer/>
         </div>
     );
 }
+
 
 export default App;

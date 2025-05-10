@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
+import './cart.css';
 
 function Cart() {
     const cartItems = useSelector(function (state) {
@@ -14,17 +15,37 @@ function Cart() {
     }
 
     if (cartItems.length === 0) {
-        return <p style={{ padding: '20px' }}>Your cart is empty.</p>;
+        return <p className="empty-cart-message">Your cart is empty.</p>;
     }
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h2>Your Cart</h2>
-            {cartItems.map(function (item) {
-                return <CartItem key={item.id} item={item} />;
-            })}
-            <h3>Total: ${getTotalPrice()}</h3>
+        // <div className="cart-container">
+        //     <h2 className="cart-title">Your Cart</h2>
+        //     <div className="cart-items">
+        //         {cartItems.map(function (item) {
+        //             return <CartItem key={item.id} item={item} />;
+        //         })}
+        //     </div>
+        //     <div className="total-price">
+        //         <h3>Total: ${getTotalPrice().toFixed(2)}</h3>
+        //     </div>
+        // </div>
+
+
+        <div className="cart-container">
+        <div className="cart-header-row">
+            <h2 className="cart-title">Your Cart</h2>
+            <div className="total-price">
+                    <h3>Total: ${getTotalPrice().toFixed(2)}</h3>
+            </div>
         </div>
+        <div className="cart-items">
+                {cartItems.map(function (item) {
+                    return <CartItem key={item.id} item={item} />;
+                })}
+        </div>
+        </div>
+
     );
 }
 

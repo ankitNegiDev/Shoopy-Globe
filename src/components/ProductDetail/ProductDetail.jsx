@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/cartSlice';
+import './productDetail.css'
+import ProductDetailSkeleton from '../SkeletonLoader/ProductDetailSkeleton';
 
 function ProductDetail() {
     const { id } = useParams();
@@ -40,20 +42,25 @@ function ProductDetail() {
         return <p>Error: {error}</p>;
     }
 
-    if (!product) {
-        return <p>Loading...</p>;
+    if (!product && !error) {
+        return <ProductDetailSkeleton />;
     }
-
     return (
-        <div style={{ padding: '20px' }}>
-            <h2>{product.title}</h2>
-            <img src={product.thumbnail} alt={product.title} style={{ width: '300px', height: '300px', objectFit: 'cover' }} />
-            <p><strong>Price:</strong> ${product.price}</p>
-            <p>{product.description}</p>
-            <button onClick={handleAddToCart} style={{ marginTop: '10px', padding: '5px 10px' }}>
-                Add to Cart
-            </button>
-        </div>
+        <>
+            <div>
+                <Link to="/" className="back-button">← Back</Link>
+
+            </div>
+            <div className="product-detail-container">
+                <h2>{product.title}</h2>
+                <img src={product.thumbnail} alt={product.title} />
+                <p className="product-price"><strong>Price:</strong> ${product.price}</p>
+                <p className="product-description">{product.description}</p>
+                <button className="add-to-cart-btn" onClick={handleAddToCart}>
+                    Add to Cart
+                </button>
+            </div>
+        </>
     );
 }
 
