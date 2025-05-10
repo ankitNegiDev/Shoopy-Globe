@@ -1,5 +1,5 @@
 .skeleton-page {
-    padding: 2rem 5vw; /* 2rem for top/bottom, 5vw for responsive horizontal padding */
+    padding: 2rem 5vw; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -10,34 +10,34 @@
     background-size: 200% 100%;
     animation: shimmerMove 1.6s infinite ease-in-out;
     border-radius: 6px;
-    height: 3rem; /* Adjust according to your search bar height (in rem) */
-    margin-bottom: 3rem; /* Space between search bar and product grid */
+    height: 3rem; 
+    margin-bottom: 3rem; 
 }
 
 /* Grid layout for skeleton cards */
 .skeleton-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem; /* Adjusted gap with rem unit */
+    gap: 2rem; 
 }
 
 /* Skeleton Card */
 .skeleton-card {
     background: #fff;
-    border-radius: 1rem; /* Rounded corners */
+    border-radius: 1rem; 
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem; /* Adjusted spacing inside card */
+    gap: 1.5rem; 
     overflow: hidden;
     position: relative;
 }
 
 /* Shimmering effect inside the card (image area) */
 .skeleton-img {
-    height: 16rem; /* Height of the image in rem */
-    border-radius: 1rem; /* Rounded corners for the image */
+    height: 16rem;
+    border-radius: 1rem; 
     background: #f0f0f0;
     position: relative;
     overflow: hidden;
@@ -57,7 +57,7 @@
 
 /* Text shimmer effect */
 .skeleton-text {
-    height: 1rem; /* Adjusted height for text */
+    height: 1rem; 
     border-radius: 0.5rem;
     background: linear-gradient(90deg, #f0f0f0 25%, #e6e6e6 50%, #f0f0f0 75%);
     background-size: 200% 100%;
@@ -65,11 +65,11 @@
 }
 
 .skeleton-text.short {
-    width: 60%; /* Short text takes 60% width */
+    width: 60%; 
 }
 
 .skeleton-text.long {
-    width: 85%; /* Longer text takes 85% width */
+    width: 85%; 
 }
 
 /* Shimmer movement animation */
@@ -88,63 +88,63 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .skeleton-page {
-        padding: 2rem 4vw; /* Adjust padding for medium screens */
+        padding: 2rem 4vw; 
     }
 
     .skeleton-grid {
-        gap: 1.5rem; /* Reduced gap on smaller screens */
+        gap: 1.5rem; 
     }
 
     .skeleton-card {
-        padding: 1rem; /* Reduced padding in the cards */
+        padding: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .skeleton-page {
-        padding: 1.5rem 3vw; /* Further reduced padding for mobile */
+        padding: 1.5rem 3vw; 
     }
 
     .skeleton-search-bar {
-        height: 2.5rem; /* Reduced search bar height on small screens */
+        height: 2.5rem; 
     }
 
     .skeleton-grid {
-        gap: 1.2rem; /* Reduced gap between cards */
+        gap: 1.2rem;
     }
 
     .skeleton-card {
-        padding: 1rem; /* Reduced card padding */
+        padding: 1rem;
     }
 
     .skeleton-img {
-        height: 12rem; /* Reduced image height for smaller screens */
+        height: 12rem; 
     }
 
     .skeleton-text {
-        height: 0.9rem; /* Reduced text height */
+        height: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
     .skeleton-page {
-        padding: 1rem 2vw; /* Adjust for very small screens */
+        padding: 1rem 2vw;
     }
 
     .skeleton-search-bar {
-        height: 2rem; /* Very small search bar height */
-        margin-bottom: 2rem; /* Reduced margin for tight layouts */
+        height: 2rem;
+        margin-bottom: 2rem; 
     }
 
     .skeleton-grid {
-        gap: 1rem; /* Smaller gap between cards */
+        gap: 1rem; 
     }
 
     .skeleton-img {
-        height: 10rem; /* Further reduced image height */
+        height: 10rem;
     }
 
     .skeleton-text {
-        height: 0.8rem; /* Even smaller text */
+        height: 0.8rem;
     }
 }

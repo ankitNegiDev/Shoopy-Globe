@@ -57,14 +57,14 @@
 /* ====== Tablet View (≤ 768px) ====== */
 @media (max-width: 768px) {
     .product-list-container {
-        padding: 0 1.5rem; /* Reduced padding */
+        padding: 0 1.5rem; 
         background: linear-gradient(to right, rgba(243, 140, 181, 0.43), #74cce991, #8fa2e794);
     }
 
     .search-input {
         width: 100%;
-        max-width: 100%; /* Full width for search input on smaller screens */
-        font-size: 1.1rem; /* Slightly smaller font for mobile */
+        max-width: 100%;
+        font-size: 1.1rem; 
     }
 
     .product-grid {
@@ -72,9 +72,9 @@
     }
 
     .error-message {
-        font-size: 1.5rem; /* Smaller font for error message */
-        padding: 6rem; /* Adjust padding for better spacing */
-        width: 80%; /* Adjust width */
+        font-size: 1.5rem; 
+        padding: 6rem; 
+        width: 80%; 
     }
 }
 
@@ -87,39 +87,39 @@
 
     .search-input {
         padding: .8rem .4rem;
-        font-size: 1rem; /* Smaller font for mobile */
+        font-size: 1rem; 
     }
 
     .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller grid items for small screens */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     }
 
     .error-message {
-        font-size: 1.2rem; /* Smaller font for error message */
-        padding: 5rem; /* Adjust padding for small screens */
-        width: 90%; /* Almost full width */
+        font-size: 1.2rem; 
+        padding: 5rem; 
+        width: 90%;
     }
 }
 
 /* ====== Very Small Screens (≤ 360px) ====== */
 @media (max-width: 360px) {
     .product-list-container {
-        padding: 0 0.5rem; /* Minimal padding for very small screens */
+        padding: 0 0.5rem; 
         background: linear-gradient(to right, rgba(243, 140, 181, 0.43), #74cce991, #8fa2e794);
     }
 
     .search-input {
         padding: .7rem .3rem;
-        font-size: 0.9rem; /* Very small font for extremely small screens */
+        font-size: 0.9rem; 
     }
 
     .product-grid {
-        grid-template-columns: 1fr; /* Single column layout for extremely small screens */
+        grid-template-columns: 1fr; 
     }
 
     .error-message {
-        font-size: 1rem; /* Even smaller font */
-        padding: 4rem; /* Further reduced padding */
-        width: 100%; /* Full width */
+        font-size: 1rem; 
+        padding: 4rem; 
+        width: 100%;
     }
 }
