@@ -3,6 +3,10 @@
 
 ShoppyGlobe is a basic yet functional e-commerce web application built with **React**, **Redux**, **React Router**, and **Vite**. It allows users to browse products, view product details, manage a shopping cart, and search for items. This project is built as part of a 250-mark full-stack development assignment.
 
+## Live url of the project
+
+[live url](https://shoopy-globe-935v.vercel.app/)
+
 ## 📦 Features
 
 - **Product Listing** – Displays all products from an external API.
